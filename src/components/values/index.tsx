@@ -43,20 +43,19 @@ function Values(props: Props) {
 
     if (topPosition) {
       const scrollPosition = window.scrollY + window.innerHeight - 1200;
-      console.log(
-        "values",
-        "top",
-        topPosition,
-        // "y",
-        // window.scrollY,
-        // "inner",
-        // window.innerHeight,
-        "scroll",
-        scrollPosition
-      );
+      // console.log(
+      //   "values",
+      //   "top",
+      //   topPosition,
+      //   // "y",
+      //   // window.scrollY,
+      //   // "inner",
+      //   // window.innerHeight,
+      //   "scroll",
+      //   scrollPosition
+      // );
 
       if (topPosition < scrollPosition) {
-        console.log("here");
         setVisible(true);
       }
     }

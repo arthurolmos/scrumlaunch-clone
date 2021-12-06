@@ -1,0 +1,151 @@
+.services-container {
+  margin: 60px 0;
+}
+
+.services-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.services-title > h1 {
+  color: white;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-size: 38px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.services-title-underline {
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 80px;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.services-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  transition: all 1s ease;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.services-list-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  font-family: "Roboto", sans-serif;
+  padding: 30px;
+}
+
+.services-list-item > h3 {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.services-list-item > p {
+  font-size: 16px;
+  color: white;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+.services-list-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.services-button-container {
+  border: 1px solid #535353;
+  border-radius: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 12px;
+  width: 80px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.services-button-container:hover {
+  background-color: #8980fe;
+}
+
+.services-modal {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  overflow-y: auto;
+  opacity: 1;
+  z-index: 9;
+}
+
+.services-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 8;
+}
+
+.services-modal-title {
+  height: 100px;
+  background: rgb(255, 120, 145);
+  background: linear-gradient(
+    100deg,
+    rgba(255, 120, 145, 1) 0%,
+    rgba(128, 0, 128, 1) 47%
+  );
+  padding: 15px;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.services-modal-body {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+.services-modal-body > p {
+  color: #737373;
+  margin-bottom: 15px;
+}
+
+.services-modal-body > ul > li {
+  color: #737373;
+}
+
+.services-modal-body > h5 {
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  margin-bottom: 15px;
+}

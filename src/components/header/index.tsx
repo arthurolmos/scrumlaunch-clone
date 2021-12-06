@@ -18,15 +18,18 @@ function Header(props: Props) {
   const menu: {
     title: string;
     ref?: React.RefObject<HTMLDivElement> | null;
-  }[] = [
-    { title: "Home", ref: homeRef },
-    { title: "Services", ref: servicesRef },
-    { title: "About", ref: aboutRef },
-    { title: "Work", ref: workRef },
-    { title: "Team", ref: teamRef },
-    { title: "Contact", ref: contactRef },
-    { title: "Blog", ref: blogRef },
-  ];
+  }[] = React.useMemo(
+    () => [
+      { title: "Home", ref: homeRef },
+      { title: "Services", ref: servicesRef },
+      { title: "About", ref: aboutRef },
+      { title: "Work", ref: workRef },
+      { title: "Team", ref: teamRef },
+      { title: "Contact", ref: contactRef },
+      { title: "Blog", ref: blogRef },
+    ],
+    [homeRef, aboutRef, blogRef, contactRef, servicesRef, teamRef, workRef]
+  );
 
   function scrollToView(ref: React.RefObject<HTMLDivElement>) {
     ref.current?.scrollIntoView({ behavior: "smooth" });

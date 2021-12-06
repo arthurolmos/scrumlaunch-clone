@@ -13,17 +13,6 @@ function Welcome(props: Props) {
 
     if (topPosition) {
       const scrollPosition = window.scrollY + window.innerHeight - 300;
-      // console.log(
-      //   "welcome",
-      //   "top",
-      //   topPosition,
-      //   "y",
-      //   window.scrollY,
-      //   "inner",
-      //   window.innerHeight,
-      //   "scroll",
-      //   scrollPosition
-      // );
 
       if (topPosition < scrollPosition) {
         setVisible(true);
@@ -31,7 +20,7 @@ function Welcome(props: Props) {
     }
   };
 
-  const show = visible ? "visible" : "";
+  const show = React.useMemo(() => (visible ? "visible" : ""), [visible]);
 
   React.useLayoutEffect(() => {
     window.addEventListener("scroll", onScroll);

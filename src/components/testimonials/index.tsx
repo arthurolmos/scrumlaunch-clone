@@ -2,16 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { IoCloseOutline } from "react-icons/io5";
 import "./index.css";
+import { values } from "./values";
 
 interface Props {}
 
 function Testimonials(props: Props) {
-  const values = [
-    '"ScrumLaunch rapidly accelerated our product development cycle and allowed us to launch a very popular new product for our clients." - Matt @ Gipper',
-    '"The ScrumLaunch team was essential to scaling our product to thousands of users. They helped build a responsive UI using angular and a powerful video transcoding engine" - Jeff @ vLoop',
-    '"They build great products very quickly and their scrum process makes everything very transparent along the way." - Ryan @ Modular11',
-  ];
-
   const [active, setActive] = React.useState(0);
   const [isScrolling, setScrolling] = React.useState(false);
 
@@ -38,11 +33,7 @@ function Testimonials(props: Props) {
     );
 
     return () => clearTimeout();
-  }, [isScrolling, values.length, active]);
-
-  // React.useEffect(() => {
-  //   console.log({ isScrolling });
-  // }, [isScrolling]);
+  }, [isScrolling, active]);
 
   return (
     <div className="testimonials-container">

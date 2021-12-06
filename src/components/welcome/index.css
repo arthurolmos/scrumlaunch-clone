@@ -1,0 +1,42 @@
+.container {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-welcome-container {
+  width: 80%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.hello-container {
+  padding: 0 15px;
+}
+
+.hello-h2 {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-family: "Montserrat", sans-serif;
+  border-bottom: 1px solid white;
+  color: white;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.hello-h3 {
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: 100;
+  color: #b0b0b0;
+  padding-left: 15px;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.visible {
+  opacity: 1;
+}

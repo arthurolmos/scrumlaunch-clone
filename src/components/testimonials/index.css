@@ -1,0 +1,28 @@
+.testimonials-h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  margin: 15px 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-800px * 2));
+  }
+}
+
+.testimonials-h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 21px;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+  transition: transform 2s linear;
+}

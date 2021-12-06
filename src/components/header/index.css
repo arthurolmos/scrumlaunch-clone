@@ -1,0 +1,42 @@
+.menu-link {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.menu-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.menu-list-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(47, 47, 47);
+  align-items: center;
+  padding: 15px;
+  z-index: 1;
+}
+
+.menu-list {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  list-style: none;
+  display: inline-flex;
+  flex-direction: row;
+  font-family: "Montserrat", sans-serif;
+}
+
+.menu-list-item {
+  padding: 15px;
+}

@@ -1,0 +1,129 @@
+.values-container {
+  background-color: #3a3a3a;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px;
+}
+
+.values-pointer {
+  content: "";
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 14px solid #3a3a3a;
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+}
+
+.values-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  margin-bottom: 30px;
+}
+
+.values-h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 33px;
+  font-weight: 100;
+  color: white;
+  margin-top: 18px;
+}
+
+.values-h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.values-h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.values-h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.values-items-row {
+  display: flex;
+  flex-direction: row;
+  transition: all 1s ease;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.values-items-container {
+  padding: 50px 15px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .values-items-container {
+    padding: 50px 15px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    color: white;
+  }
+}
+
+.values-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.collapsed {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.full {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.values-items-container:hover > .values-item.full {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+}
+
+.values-items-container:hover > .values-item.collapsed {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}

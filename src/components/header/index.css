@@ -16,6 +16,31 @@
   justify-content: flex-end;
 }
 
+.menu-list-button-container {
+  display: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  flex: 1;
+}
+
+.menu-list-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8980fe;
+  width: 40px;
+  height: 40px;
+}
+
+.menu-list-button-stripes {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
 .header {
   display: flex;
   position: fixed;
@@ -26,6 +51,8 @@
   align-items: center;
   padding: 15px;
   z-index: 1;
+  flex-wrap: wrap;
+  max-width: 100vw;
 }
 
 .menu-list {
@@ -40,4 +67,41 @@
 
 .menu-list-item {
   padding: 15px;
+}
+
+.menu-list-container-collapsable {
+  flex: 1;
+  display: none;
+  background-color: rgb(47, 47, 47);
+  width: 100vw;
+  max-width: 100vw;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.menu-list-collapsable {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  list-style: none;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-list-container {
+    display: none;
+  }
+
+  .menu-list-button-container {
+    display: flex;
+  }
+
+  .menu-list-container-collapsable {
+    display: block;
+  }
 }

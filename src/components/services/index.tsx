@@ -233,7 +233,7 @@ function Services(props: Props) {
         <div className={`services-grid-container ${show}`}>
           {values.map((item, index) => {
             return (
-              <div className="services-list-item">
+              <div className="services-list-item" key={index}>
                 <div style={{ color: "#8980fe" }}>{item.icon}</div>
                 <h3>{`${index + 1}. ${item.title}`}</h3>
                 <p>{item.description}</p>
@@ -264,9 +264,9 @@ function Services(props: Props) {
             </div>
             <div className="services-modal-body">
               <p>{modalItem?.info.description}</p>
-              {modalItem?.info.sub?.map((item) => {
+              {modalItem?.info.sub?.map((item, index) => {
                 return (
-                  <>
+                  <div key={index}>
                     <h5>{item.title}</h5>
                     {typeof item.description === "string" ? (
                       <p>{item.description}</p>
@@ -277,7 +277,7 @@ function Services(props: Props) {
                         })}
                       </ul>
                     )}
-                  </>
+                  </div>
                 );
               })}
             </div>

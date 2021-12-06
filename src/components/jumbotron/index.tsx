@@ -37,28 +37,18 @@ function Jumbotron(props: Props) {
     return () => clearTimeout();
   }, [isScrolling, values.length, active]);
 
-  const particlesInit = (main: any) => {
-    console.log(main);
+  const particles = React.useMemo(() => {
+    const particlesInit = (main: any) => {
+      console.log(main);
 
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
+      // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+    };
 
-  const particlesLoaded = (container: any) => {
-    console.log(container);
-  };
+    const particlesLoaded = (container: any) => {
+      console.log(container);
+    };
 
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: window.innerHeight,
-        margin: "0",
-        padding: "0",
-        overflow: "hidden",
-        position: "relative",
-      }}
-      ref={homeRef}
-    >
+    return (
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -141,17 +131,26 @@ function Jumbotron(props: Props) {
           fullScreen: false,
         }}
       />
+    );
+  }, []);
+
+  return (
+    <div
+      style={{
+        height: window.innerHeight,
+      }}
+      className="jumbotron-wrapper"
+      ref={homeRef}
+    >
+      {particles}
       <div className="jumbotron">
         <div className="inner-jumbotron-container">
-          <img src="logo_center.png" alt="Logo Center" width={100} />
-          <div
-            style={{
-              display: "block",
-              marginBottom: 20,
-              overflow: "hidden",
-              height: 80,
-            }}
-          >
+          <img
+            src="logo_center.png"
+            alt="Logo Center"
+            className="jumbotron-logo"
+          />
+          <div className="jumbotron-slider-container">
             <div
               style={{
                 display: "flex",

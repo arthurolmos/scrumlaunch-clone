@@ -32,9 +32,12 @@ function Header(props: Props) {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }
 
+  const [open, setOpen] = React.useState(false);
+  const toggle = () => setOpen(!open);
+
   return (
     <div className="header">
-      <div style={{ flex: 1 }}>
+      <div>
         <a href="/">
           <img src="main_logo.png" alt="Scrum Launch" width={160} />
         </a>
@@ -42,6 +45,34 @@ function Header(props: Props) {
 
       <div className="menu-list-container">
         <ul className="menu-list">
+          {menu.map((item, index) => {
+            return (
+              <li className="menu-list-item" key={index}>
+                <div
+                  onClick={() => item.ref && scrollToView(item.ref)}
+                  className="menu-link"
+                >
+                  {item.title}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="menu-list-button-container" onClick={toggle}>
+        <div className="menu-list-button">
+          <div className="menu-list-button-stripes" />
+          <div className="menu-list-button-stripes" />
+          <div className="menu-list-button-stripes" />
+        </div>
+      </div>
+
+      <div
+        className="menu-list-container-collapsable"
+        style={{ height: open ? 350 : 0 }}
+      >
+        <ul className="menu-list-collapsable">
           {menu.map((item, index) => {
             return (
               <li className="menu-list-item" key={index}>

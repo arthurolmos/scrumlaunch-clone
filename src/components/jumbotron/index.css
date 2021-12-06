@@ -24,6 +24,8 @@
 
 .jumbotron-slider {
   margin-bottom: 20px;
+  overflow: hidden;
+  height: 80px;
 }
 
 .jumbotron-h1 {

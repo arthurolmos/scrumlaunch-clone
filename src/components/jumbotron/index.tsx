@@ -2,10 +2,43 @@ import React from "react";
 import Particles from "react-tsparticles";
 import { FaArrowDown } from "react-icons/fa";
 import "./index.css";
+import { MenuContext } from "../../contexts/MenuContext";
 
 interface Props {}
 
 function Jumbotron(props: Props) {
+  const { homeRef } = React.useContext(MenuContext);
+
+  const [active, setActive] = React.useState(0);
+  const [isScrolling, setScrolling] = React.useState(false);
+
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const height = 80;
+  const translate = -height * active;
+
+  const values = ["Millions of Users", "Product Innovation", "UX Design"];
+
+  React.useEffect(() => {
+    if (isScrolling) return;
+
+    setTimeout(
+      () => {
+        setScrolling(true);
+
+        const index = active < values.length - 1 ? active + 1 : 0;
+
+        setActive(index);
+
+        setScrolling(false);
+      },
+
+      3000
+    );
+
+    return () => clearTimeout();
+  }, [isScrolling, values.length, active]);
+
   const particlesInit = (main: any) => {
     console.log(main);
 
@@ -26,6 +59,7 @@ function Jumbotron(props: Props) {
         overflow: "hidden",
         position: "relative",
       }}
+      ref={homeRef}
     >
       <Particles
         id="tsparticles"
@@ -57,7 +91,7 @@ function Jumbotron(props: Props) {
                 size: 40,
               },
               push: {
-                quantity: 4,
+                quantity: 2,
               },
               repulse: {
                 distance: 0,
@@ -92,7 +126,7 @@ function Jumbotron(props: Props) {
                 enable: true,
                 value_area: 800,
               },
-              value: 80,
+              value: 40,
             },
             opacity: {
               value: 0.5,
@@ -102,7 +136,7 @@ function Jumbotron(props: Props) {
             },
             size: {
               random: true,
-              value: 5,
+              value: 2,
             },
           },
           detectRetina: true,
@@ -112,8 +146,28 @@ function Jumbotron(props: Props) {
       <div className="jumbotron">
         <div className="inner-jumbotron-container">
           <img src="logo_center.png" alt="Logo Center" width={100} />
-          <div className="jumbotron-slider">
-            <h1 className="jumbotron-h1">Millions of Users</h1>
+          <div
+            style={{
+              display: "block",
+              marginBottom: 20,
+              overflow: "hidden",
+              height: 80,
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                transform: `translateY(${translate}px)`,
+                transition: "all .5s ease-in-out",
+                marginBottom: 20,
+                overflow: "hidden",
+              }}
+            >
+              <h1 className="jumbotron-h1">Millions of Users</h1>
+              <h1 className="jumbotron-h1">Product Innovation</h1>
+              <h1 className="jumbotron-h1">UX Design</h1>
+            </div>
           </div>
           <div className="jumbotron-separator" />
           <div className="jumbotron-separator" />

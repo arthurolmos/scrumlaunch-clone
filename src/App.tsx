@@ -1,5 +1,6 @@
 import React from "react";
 import { Animated } from "react-animated-css";
+import { MenuProvider } from "./contexts/MenuContext";
 import Header from "./components/header";
 import Jumbotron from "./components/jumbotron";
 import Welcome from "./components/welcome";
@@ -12,26 +13,30 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <MenuProvider>
+        <Header />
 
-      <Jumbotron />
+        <Jumbotron />
 
-      <Welcome />
+        <Welcome />
 
-      <Values />
+        <Values />
 
-      <Testimonials />
+        <Testimonials />
 
-      <Animated
-        animationIn="bounceInLeft"
-        animationOut="fadeOut"
-        isVisible={isVisible}
-      >
-        <div style={{ color: "white" }}>Some Text</div>
-      </Animated>
-      <div style={{ color: "white" }}>Hello</div>
-      <h1 className="animate__animated animate__bounce">An animated element</h1>
-      <button onClick={toggle}>Click</button>
+        <Animated
+          animationIn="bounceInLeft"
+          animationOut="fadeOut"
+          isVisible={isVisible}
+        >
+          <div style={{ color: "white" }}>Some Text</div>
+        </Animated>
+        <div style={{ color: "white" }}>Hello</div>
+        <h1 className="animate__animated animate__bounce">
+          An animated element
+        </h1>
+        <button onClick={toggle}>Click</button>
+      </MenuProvider>
     </div>
   );
 }

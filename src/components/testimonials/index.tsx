@@ -45,16 +45,7 @@ function Testimonials(props: Props) {
   // }, [isScrolling]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        backgroundColor: "#212121",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "40px 0 20px",
-        flexDirection: "column",
-      }}
-    >
+    <div className="testimonials-container">
       <IoCloseOutline color="white" size={20} />
       <h4 className="testimonials-h4">Testimonials</h4>
 

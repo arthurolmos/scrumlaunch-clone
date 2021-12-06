@@ -1,21 +1,36 @@
 import React from "react";
+import { MenuContext } from "../../contexts/MenuContext";
 import "./index.css";
 
 interface Props {}
 
 function Header(props: Props) {
+  const {
+    homeRef,
+    aboutRef,
+    blogRef,
+    contactRef,
+    servicesRef,
+    teamRef,
+    workRef,
+  } = React.useContext(MenuContext);
+
   const menu: {
     title: string;
-    link: string;
+    ref?: React.RefObject<HTMLDivElement> | null;
   }[] = [
-    { title: "Home", link: "/" },
-    { title: "Services", link: "/" },
-    { title: "About", link: "/" },
-    { title: "Work", link: "/" },
-    { title: "Team", link: "/" },
-    { title: "Contact", link: "/" },
-    { title: "Blog", link: "/" },
+    { title: "Home", ref: homeRef },
+    { title: "Services", ref: servicesRef },
+    { title: "About", ref: aboutRef },
+    { title: "Work", ref: workRef },
+    { title: "Team", ref: teamRef },
+    { title: "Contact", ref: contactRef },
+    { title: "Blog", ref: blogRef },
   ];
+
+  function scrollToView(ref: React.RefObject<HTMLDivElement>) {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <div className="header">
@@ -27,13 +42,18 @@ function Header(props: Props) {
 
       <div className="menu-list-container">
         <ul className="menu-list">
-          {menu.map((item, index) => (
-            <li className="menu-list-item" key={index}>
-              <a href={item.link} className="menu-link">
-                {item.title}
-              </a>
-            </li>
-          ))}
+          {menu.map((item, index) => {
+            return (
+              <li className="menu-list-item" key={index}>
+                <div
+                  onClick={() => item.ref && scrollToView(item.ref)}
+                  className="menu-link"
+                >
+                  {item.title}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

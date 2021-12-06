@@ -1,5 +1,4 @@
 import React from "react";
-import { Animated } from "react-animated-css";
 import { MenuProvider } from "./contexts/MenuContext";
 import Header from "./components/header";
 import Jumbotron from "./components/jumbotron";
@@ -9,9 +8,6 @@ import Testimonials from "./components/testimonials";
 import Services from "./components/services";
 
 function App() {
-  const [isVisible, setVisible] = React.useState(false);
-  const toggle = () => setVisible(!isVisible);
-
   return (
     <div>
       <MenuProvider>

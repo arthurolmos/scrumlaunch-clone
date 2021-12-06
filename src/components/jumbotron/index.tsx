@@ -12,8 +12,6 @@ function Jumbotron(props: Props) {
   const [active, setActive] = React.useState(0);
   const [isScrolling, setScrolling] = React.useState(false);
 
-  const ref = React.useRef<HTMLDivElement>(null);
-
   const height = 80;
   const translate = -height * active;
 

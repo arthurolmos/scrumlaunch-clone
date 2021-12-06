@@ -22,6 +22,29 @@ function App() {
         <Testimonials />
 
         <Services />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 10,
+          }}
+        >
+          <a
+            style={{
+              color: "white",
+              textDecoration: "none",
+              textAlign: "center",
+            }}
+            href="https://github.com/arthurolmos/scrumlaunch-clone"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View on GitHub!
+          </a>
+        </div>
       </MenuProvider>
     </div>
   );
